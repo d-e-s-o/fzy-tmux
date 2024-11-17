@@ -1,7 +1,21 @@
 [package]
 name = "fzy-tmux"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2021"
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/d-e-s-o/fzy-tmux"
+repository = "https://github.com/d-e-s-o/fzy-tmux.git"
+readme = "README.md"
+categories = [
+  "command-line-utilities",
+  "text-processing",
+  "visualization",
+]
+keywords = ["fzy", "tmux", "cli", "terminal", "utility"]
+description = """
+A rewrite of fzy's fzy-tmux script in Rust.
+"""
+
 
 [profile.release]
 opt-level = "z"
