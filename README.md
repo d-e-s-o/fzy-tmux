@@ -5,4 +5,6 @@
 fzy-tmux
 ========
 
+- [Changelog](CHANGELOG.md)
+
 A rewrite of `fzy`'s `fzy-tmux` script in Rust.

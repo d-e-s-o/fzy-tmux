@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Daniel Mueller <deso@posteo.net>
+// Copyright (C) 2024-2025 Daniel Mueller <deso@posteo.net>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 use std::env;
@@ -62,7 +62,7 @@ fn filter_tmux(tmux: &OsStr) -> &OsStr {
 }
 
 
-fn main() -> Result<()> {
+fn main_impl() -> Result<i32> {
   let tmux = env::var_os("TMUX").context("TMUX variable not found")?;
   let tmux = filter_tmux(&tmux);
 
@@ -125,6 +125,11 @@ fn main() -> Result<()> {
     .trim_end()
     .parse::<i32>()
     .context("failed to parse reported exit code")?;
+  Ok(rc)
+}
+
+fn main() -> Result<()> {
+  let rc = main_impl()?;
   exit(rc);
 }
 
